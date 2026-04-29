@@ -21,7 +21,7 @@ async function registerUser({ name, email, password }) {
   const existingUser = await User.findOne({ email });
 
   if (existingUser) {
-    throw createHttpError(409, 'An account with this email already exists.');
+    throw createHttpError(409, 'An account with this email already exists please try again.');
   }
 
   const user = await User.create({ name, email, password });
